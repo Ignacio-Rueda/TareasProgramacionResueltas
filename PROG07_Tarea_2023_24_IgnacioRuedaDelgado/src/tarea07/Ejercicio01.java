@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Ejercicio 1. Creando jardín botánico
  *
- * @author Profesor
+ * @author Ignacio
  */
 public class Ejercicio01 {
 
