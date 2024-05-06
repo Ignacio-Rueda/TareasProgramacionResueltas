@@ -38,6 +38,8 @@ public class Ejercicio04 {
          * persona del día anterior, que serán ahora primera y segunda, y habrá
          * una tercera persona nueva.
          */
+        System.out.println("ASIGNACIÓN DE TURNOS(I): TURNOS POR FECHA");
+        System.out.println("-----------------------------------------");
         int n = 0;
         while (n < mapTurnosPorFecha.size()) {
             int pos0 = n % arrayPersonas.length;
@@ -55,10 +57,7 @@ public class Ejercicio04 {
             
             n++;
         }
-        System.out.println("Contenido final del mapa de turnos:");
-        for(Map.Entry<LocalDate,List<String>> pareja : mapTurnosPorFecha.entrySet()){
-            System.out.printf("Fecha %s: %s%n",pareja.getKey().format(formatoFecha),pareja.getValue());
-        }
+  
 
 
     }
