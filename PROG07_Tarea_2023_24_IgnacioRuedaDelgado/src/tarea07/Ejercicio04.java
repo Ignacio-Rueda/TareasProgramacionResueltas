@@ -46,9 +46,7 @@ public class Ejercicio04 {
                 if (!especiesPlantas.containsKey(plantasAleatorias1.get(n))) {
                     especiesPlantas.put(plantasAleatorias1.get(n), new ArrayList<>());
                 }
-                List<Integer> lista = new ArrayList<>(especiesPlantas.get(plantasAleatorias1.get(n)));
-                lista.add(n);
-                especiesPlantas.put(plantasAleatorias1.get(n), lista);
+                especiesPlantas.get(plantasAleatorias1.get(n)).add(n);
             }
         }
 
