@@ -27,12 +27,14 @@ public class ChipBiciIO{
         List<ChipBici> listaChipBici=null;
         try(ObjectInputStream leer = new ObjectInputStream(new FileInputStream(rutaArchivo))){
             listaChipBici = (List<ChipBici>)leer.readObject();
-        }catch(ClassNotFoundException ex){
-            System.out.println(ex.getMessage());
         }
         catch(FileNotFoundException ex){
             System.out.println(ex.getMessage());
         }catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }catch(ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }catch(ClassCastException ex){
             System.out.println(ex.getMessage());
         }
         return listaChipBici;
