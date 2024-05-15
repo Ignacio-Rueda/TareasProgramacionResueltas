@@ -24,8 +24,18 @@ public class ChipBiciIO{
      * @return Lista de objetos ChipBici que estaba almacenada en el archivo binario.
      */
     public List leer() {
-        return null;
-        
+        List<ChipBici> listaChipBici=null;
+        try(ObjectInputStream leer = new ObjectInputStream(new FileInputStream(rutaArchivo))){
+            listaChipBici = (List<ChipBici>)leer.readObject();
+        }catch(ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        catch(FileNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
+        return listaChipBici;
     }
 
     /**
@@ -33,6 +43,14 @@ public class ChipBiciIO{
      * @param bicis Lista de objetos ChipBici serializables para almacenar en el archivo binario.
      */
     public void escribir(List bicis) {
+        try(ObjectOutputStream escribir = new ObjectOutputStream(new FileOutputStream(rutaArchivo))){
+            escribir.writeObject(bicis);
+            escribir.flush();
+        }catch(FileNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
        
     }
 
